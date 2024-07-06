@@ -5,6 +5,31 @@
     <title>Project: Rock Paper Scissors</title>
 </head>
 <body>
-    
+    <script>
+        let randomNumber = 0;
+        let computerChoice = "";
+
+        // Logic to get the computer choice
+        // Generate random number from 0 to 2
+        function getComputerChoice (max){
+            return Math.floor(Math.random() * max);
+        }
+
+        randomNumber = getComputerChoice(3);
+        console.log(randomNumber);
+
+        // Assign random number to one of the choices Rock Paper or Scissors
+        if (randomNumber === 0) {
+            computerChoice = "Rock";
+        } else if (randomNumber === 1) {
+            computerChoice = "Paper";
+        } else {
+            computerChoice = "Scissors";
+        }
+
+        console.log(computerChoice);
+
+
+    </script>
 </body>
 </html>
