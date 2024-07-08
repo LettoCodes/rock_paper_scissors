@@ -9,8 +9,8 @@
         let randomNumber = 0;
         let computerChoice = "";
         let humanChoice = "";
-        let humanScore = 0;
         let computerScore = 0;
+        let humanScore = 0;
 
         // Logic to get the computer choice
         // Step 1: Generate random number from 0 to 2
@@ -20,27 +20,49 @@
         // Step 2: Assign random number to one of the choices Rock Paper or Scissors
         function getComputerChoice(n) {
             if (n === 0) {
-            return "Rock";
+            return "rock";
             } else if (n === 1) {
-            return "Paper";
+            return "paper";
             } else {
-            return "Scissors";
+            return "scissors";
             }
         }
         
         computerChoice = getComputerChoice(randomNumber);
-        console.log(computerChoice);
+        console.log("Computer choice: ", computerChoice);
 
         // Write the logic to get the human choice
         // Step 1: Get human choice from prompt
         function getHumanChoice() {
-            return prompt("Rock, Paper or Scissors?");
+            return prompt("Rock, Paper or Scissors?").toLowerCase();
         }
 
         humanChoice = getHumanChoice();
-        console.log(humanChoice);
+        console.log("Your choice: ", humanChoice);
 
+        // Logic to play a single round
+        // Step 1: Send message to console "It's a draw!" if both choices are equal
+        // Step 2: Send message to console "You lose! Paper beats Rock" if human choice is rock and computer choice is paper, increment computer score
+        // Step 3:Send message to console "You won! Paper beats Rock" if human choice is paper and computer choice is rock, increment human score
+        function playRound(humanSelection, computerSelection) {
+            if (humanSelection === computerSelection) {
+                console.log("It's a draw!");
+            } else if (humanSelection === "rock" && computerSelection === "paper"){
+                computerScore++;
+                console.log("You lose! Paper beats Rock");
+                console.log("Your Score is: ", humanScore);
+                console.log("Computer Score is: ", computerScore);
+            } else if (humanSelection === "paper" && computerSelection === "rock"){
+                humanScore++;
+                console.log("You won! Paper beats Rock");
+                console.log("Your Score is: ", humanScore);
+                console.log("Computer Score is: ", computerScore);
+            } else {
+                console.log("Keep trying!");
+            }
+        }
 
+        playRound(humanChoice, computerChoice);
 
     </script>
 </body>
