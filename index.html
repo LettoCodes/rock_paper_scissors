@@ -44,6 +44,8 @@
         // Step 1: Send message to console "It's a draw!" if both choices are equal
         // Step 2: Send message to console "You lose! Paper beats Rock" if human choice is rock and computer choice is paper, increment computer score
         // Step 3:Send message to console "You won! Paper beats Rock" if human choice is paper and computer choice is rock, increment human score
+        // Step 4: Send message to console "You won! Rock beats Scissors" if human choice is rock and computer choice is scissors, increment human score
+        // Step 5:Send message to console "You lose! Rock beats Scissors" if human choice is scissors and computer choice is rock, increment computer score
         function playRound(humanSelection, computerSelection) {
             if (humanSelection === computerSelection) {
                 console.log("It's a draw!");
