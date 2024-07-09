@@ -57,8 +57,18 @@
                 console.log("You won! Paper beats Rock");
                 console.log("Your Score is: ", humanScore);
                 console.log("Computer Score is: ", computerScore);
+            } else if (humanSelection === "rock" && computerSelection === "scissors") {
+                humanScore++;
+                console.log("You won! Rock beats Scissors")
+                console.log("Your Score is: ", humanScore);
+                console.log("Computer Score is: ", computerScore);
+            } else if (humanSelection === "scissors" && computerSelection === "rock") {
+                computerScore++;
+                console.log("You lose! Rock beats Scissors")
+                console.log("Your Score is: ", humanScore);
+                console.log("Computer Score is: ", computerScore);
             } else {
-                console.log("Keep trying!");
+                console.log("Keep trying!")
             }
         }
 
