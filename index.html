@@ -46,39 +46,50 @@
         // Step 3: Send message to console "You won! Paper beats Rock" if human choice is paper and computer choice is rock, increment human score
         // Step 4: Send message to console "You won! Rock beats Scissors" if human choice is rock and computer choice is scissors, increment human score
         // Step 5: Send message to console "You lose! Rock beats Scissors" if human choice is scissors and computer choice is rock, increment computer score
+        // Step 6: Send message to console "You lose! Scissors beats Paper" if human choice is paper and computer choice is scissors, increment computer score
+        // Step 7: Send message to console "You won! Scissors beats Paper" if human choice is scissors and computer choice is paper, increment human score
+        // Step 8: Else, send message to console "You have to enter a valid option to play! Try again!"
+
         function playRound(humanSelection, computerSelection) {
             if (humanSelection === computerSelection) {
                 console.log("It's a draw!");
+
             } else if (humanSelection === "rock" && computerSelection === "paper"){
                 computerScore++;
                 console.log("You lose! Paper beats Rock");
                 console.log("Your Score is: ", humanScore);
                 console.log("Computer Score is: ", computerScore);
+            
             } else if (humanSelection === "paper" && computerSelection === "rock"){
                 humanScore++;
                 console.log("You won! Paper beats Rock");
                 console.log("Your Score is: ", humanScore);
                 console.log("Computer Score is: ", computerScore);
+            
             } else if (humanSelection === "rock" && computerSelection === "scissors") {
                 humanScore++;
                 console.log("You won! Rock beats Scissors")
                 console.log("Your Score is: ", humanScore);
                 console.log("Computer Score is: ", computerScore);
+            
             } else if (humanSelection === "scissors" && computerSelection === "rock") {
                 computerScore++;
                 console.log("You lose! Rock beats Scissors")
                 console.log("Your Score is: ", humanScore);
                 console.log("Computer Score is: ", computerScore);
+            
             } else if (humanSelection === "paper" && computerSelection === "scissors") { 
                 computerScore++;
                 console.log("You lose! Scissors beats Paper");
                 console.log("Your Score is: ", humanScore);
                 console.log("Computer Score is: ", computerScore);
+            
             } else if (humanSelection === "scissors" && computerSelection === "paper") {
                 humanScore++;
                 console.log("You won! Scissors beats Paper");
                 console.log("Your Score is: ", humanScore);
                 console.log("Computer Score is: ", computerScore)
+
             } else {
                 console.log("You have to enter a valid option to play! Try again!")
             }
